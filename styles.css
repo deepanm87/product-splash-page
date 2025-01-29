@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "cabin", sans-serif;
     color: #404040;
@@ -32,14 +36,23 @@ p {
     margin-bottom: 0.562em;
 }
 
+.beta-text, .subheading {
+    text-transform: uppercase;
+}
+
 .intro {
     color: #fff;
     display: flex;
     flex-direction: column;
-    min-height: 250px;
+    min-height: 100px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: black;
+}
+
+.top-text {
+    order: -1;
+    margin: 0;
 }
 
 .main-content {
@@ -53,7 +66,80 @@ p {
     text-align: center;
 }
 
+.main-content p, form {
+    max-width: 450px;
+}
+
 .img-main {
-    width: 120px;
+    width: 150px;
     border-radius: 50%;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 0.75em;
+    border: 2px solid #d1d5db;
+    border-radius: 5px;
+}
+
+input::focus {
+    border: 2px solid #8a71ec;
+    background-color: #e6e8ec;
+}
+
+button {
+    font-family: cabin;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #8a71ec;
+    cursor: pointer;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 1em 0;
+    border: none;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #8a71ec;
+    margin-top: 1em;
+}
+
+.btn::hover {
+    background-color: #b7a7f6;
+}
+
+@media (min-width: 576px) {
+    body {
+        display: flex;
+    }
+    .intro, .main-content {
+        width: 50%;
+    }
+    .intro {
+        min-height: 100vh;
+    }
+    .main-content {
+        align-items: center;
+    }
+    h1 {
+        font-size: 10vh;
+    }
+    h2 {
+        font-size: 2.625em;
+    }
+    .beta-text {
+        font-size: 1.25em;
+    }
 }
